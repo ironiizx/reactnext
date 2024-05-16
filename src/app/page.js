@@ -3,12 +3,12 @@ import styles from "./page.module.css";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Card from "./components/Card/Card";
+import CardsGrid from "./components/CardsGrid/CardsGrid";
 import Footer from "./components/Footer/Footer";
+import FetchGrid from "./components/FetchGrid/FetchGrid";
 
 export default function Home() {
-
-  const cardsGrid =[
-    
+  const data = [
     {
       title: "Card 1",
       description: "Description Card 1",
@@ -24,38 +24,45 @@ export default function Home() {
       description: "Description Card 3",
       image: "/images/avion3.jpg",
     },
+    {
+      title: "Card 3",
+      description: "Description Card 3",
+      image: "/images/avion3.jpg",
+    },
+    {
+      title: "Card 3",
+      description: "Description Card 3",
+      image: "/images/avion3.jpg",
+    },
+    {
+      title: "Card 3",
+      description: "Description Card 3",
+      image: "/images/avion3.jpg",
+    },
   ];
 
   const menuItems = [
     {
-      item: 'Home',
-      link: '/',
+      item: "Home",
+      link: "/",
     },
     {
-      item: 'About',
-      link: '/about/',
+      item: "About",
+      link: "/about/",
     },
     {
-      item: 'Contact',
-      link: '/contact/',
+      item: "Contact",
+      link: "/contact/",
     },
   ];
-  
+
   return (
     <main className={styles.main}>
       <Navbar title={`Vuelos.com`} menu={menuItems} />
-      <Hero mainText={`Vuelos.com`}/>
-      <div className={styles.cardContainer}>
-        {cardsGrid.map((card, index)=> (
-          <Card 
-          key={index}
-          title={card.title}
-          image={card.image}
-          description={card.description}
-          />
-        ))}
-      </div>
-<Footer/>
+      <Hero mainText={`Vuelos.com`} />
+      <CardsGrid cards={data} />
+      <Footer />
+      <FetchGrid />
     </main>
   );
 }
